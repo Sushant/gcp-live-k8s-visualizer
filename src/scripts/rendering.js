@@ -165,7 +165,7 @@ function renderDeployments(deployments, pods, yOffset) {
             <span>
             <div>${name}</div>
             <br/>
-            <div class="replicas">Replicas: ${deployment.spec.replicas}</div>
+            <div class="replicas">Replicas: ${deployment.status.replicas}</div>
             ${version ? `<br/>${version}` : ''}
             </span>
             </div>`;

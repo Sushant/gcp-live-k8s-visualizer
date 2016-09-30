@@ -80,7 +80,7 @@ function loadData() {
         });
     requests.push(podsReq);
 
-    const deploymentsReq = getJson('/apis/extensions/v1beta1/namespaces/default/deployments/?labelSelector=visualize%3Dtrue')
+    const deploymentsReq = getJson('/apis/extensions/v1beta1/deployments/?labelSelector=app%3Disitup')
         .then((data) => {
             deployments = data.items;
             hideError(deploymentErrorElement);
@@ -89,7 +89,7 @@ function loadData() {
         });
     requests.push(deploymentsReq);
 
-    const servicesReq = getJson('/api/v1/services?labelSelector=visualize%3Dtrue')
+    const servicesReq = getJson('/api/v1/services?labelSelector=app%3Disitup')
         .then((data) => {
             services = data.items;
             hideError(serviceErrorElement);
